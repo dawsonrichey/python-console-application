@@ -1,7 +1,9 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-html = urlopen('https://teamtreehouse.com/dawson89')
+default_user = 'dawson89'
+
+html = urlopen(f'https://teamtreehouse.com/{default_user}')
 soup = BeautifulSoup(html.read(), 'html.parser')
 
 total_points_section = soup.find('div', {'class': 'contained points-container'})
