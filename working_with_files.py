@@ -2,6 +2,8 @@ import os
 # importing datetime module for now()
 from datetime import datetime, date
 
+import self as self
+
 now = datetime.now()
 today = date.today()
 current_time = now.strftime("%H:%M:%S")
@@ -94,10 +96,12 @@ def nerd_quiz():
 
     if save_results == 'y':
         # Append the data to the file.
-        quiz_file.write(user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date)  + '\n')
+        quiz_file.write(
+            user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date) + '\n')
         # Close the file.
     quiz_file.close()
     print('Data appended to coffee.txt.')
+
 
 def quiz_results():
     # Open a file named philosophers.txt.
@@ -113,6 +117,7 @@ def quiz_results():
     # memory.
     full_quiz_content = print(file_contents)
 
+
 def get_user_choice():
     # Let users know what they can do.
     print("\n[1] Answer My Riddle")
@@ -127,26 +132,36 @@ def get_user_choice():
 
 # MAIN PROGRAM
 # Set up a loop where users can choose what they'd like to do.
-users = []
-user = input('Please Enter Your Name: ')
-users.append(user)
-print(users)
+# class User:
+#     def __init__(self, name, password):
+#         self.name = name
+#         self.password = password
+
+
+f = open("demofile3.txt", "w")
+f.write("Woops! I have deleted the content!")
+f.close()
+
+#open and read the file after the appending:
+f = open("demofile3.txt", "r")
+print(f.read())
+
 choice = ''
 program_title_bar()
-print(f"\nWelcome, '{user}!")
+# print(f"\nWelcome, '{user}!")
 while choice != 'e':
 
     choice = get_user_choice()
 
     # Respond to the user's choice.
     if choice == '1':
-        riddle_game()
+        print("\nCreate new file\n")
     elif choice == '2':
-        shopping_spree()
+        print("\nDisplay current users\n")
     elif choice == '3':
-        nerd_quiz()
+        print("\nUpdate Users\n")
     elif choice == '4':
-        quiz_results()
+        print("\nYOur Profile\n")
     elif choice == '5':
         print("\nPLEASE TRY AGAIN LATER\n")
     elif choice == 'e':
