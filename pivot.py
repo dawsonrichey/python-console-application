@@ -1,13 +1,14 @@
 import os
+
 # creating a dictionary of items to sell in the shop
 # The 1 will skip 0 when listing the item number
 wands = {'Oak': 23, 'Pine': 99, 'Maple': 837}
 
+
 # FUNCTIONS
-def display_title_bar():
+def program_title_bar():
     # Clears the terminal screen, and displays a title bar.
     os.system('clear')
-
     print("****************************************************************")
     print("***      You are about to enter another dimension.           ***")
     print("***   A dimension not only of sight and sound, but of mind.  ***")
@@ -16,7 +17,7 @@ def display_title_bar():
 
 
 def store_title_bar():
-    # Clears the terminal screen, and displays a title bar.
+    # Clears the terminal screen, and displays a Store title bar.
     os.system('clear')
     print("****************************************************************")
     print("***                   Oleanders Wand Shop                    ***")
@@ -24,8 +25,8 @@ def store_title_bar():
 
 
 def riddle_game():
-    answer = 5
-    riddle = "How many woods can a woodchuck chuck? "
+    answer = "teeth"
+    riddle = "Thirty white horses on a red hill, First they champ, Then they stamp, Then they stand still."
     riddle_guess = int(input(riddle))
 
     while riddle_guess != answer:
@@ -36,6 +37,7 @@ def riddle_game():
 
 
 def shopping_spree():
+    purchase = []
     print('I hope you love to shop...because you have no other options!')
     q1 = input("Do you have any money? ")
     if q1 == 'y':
@@ -48,25 +50,62 @@ def shopping_spree():
         print(f"[{i}]  {k} ${v}")
     owner_q1 = input('Would you like to buy something? ')
     if owner_q1 == 'y':
-        print('no')
+        purchase_number = int(input('Please Enter the Number of the item you would like to buy at this time? '))
+        purchase.append(purchase_number)
+        print()
     elif owner_q1 == 'n':
         print('no')
 
+
+def nerd_quiz():
+    nerd_q1 = "What part of the plant conducts photosynthesis? "
+    nerd_q2 = "Frog is a reptile or amphibian? "
+    nerd_q3 = "Which scientist proposed the three laws of motion? "
+    nerd_q4 = "The standard unit of measurement for energy is ____."
+
+    nerd_a1 = "leaf"
+    nerd_a2 = "amphibian"
+    nerd_a3 = "isaac newton"
+    nerd_a4 = "joule"
+
+    nerd_g1 = input(nerd_q1).lower()
+    nerd_g2 = input(nerd_q2).lower()
+    nerd_g3 = input(nerd_q3).lower()
+    nerd_g4 = input(nerd_q4).lower()
+
+    score = 0
+    if nerd_g1 == nerd_a1:
+        score += 1
+    if nerd_g2 == nerd_a2:
+        score += 1
+    if nerd_g3 == nerd_a3:
+        score += 1
+    if nerd_g4 == nerd_a4:
+        score += 1
+
+    print(f'You answered {score} answers correct')
+
+
 def get_user_choice():
     # Let users know what they can do.
-    print("\n[1] Answer my riddle")
-    print("[2] Go shopping")
-    print("[3] Play a game")
-    print("[e] Exit")
+    print("\n[1] Answer My Riddle")
+    print("[2] Go Shopping")
+    print("[3] Take a quiz")
+    # print("[4] User Quest Tracker")
+    print("[e] Exit\n")
 
     return input("What would you like to do? ")
 
+
 # MAIN PROGRAM
 # Set up a loop where users can choose what they'd like to do.
-
-
+users = []
+user = input('Please Enter Your Name: ')
+users.append(user)
+print(users)
 choice = ''
-display_title_bar()
+program_title_bar()
+print(f"\nWelcome, '{user}!")
 while choice != 'e':
 
     choice = get_user_choice()
@@ -77,9 +116,10 @@ while choice != 'e':
     elif choice == '2':
         shopping_spree()
     elif choice == '3':
-        print("\nSORRY BUT THE GAME HAS NOT YET BEEN BUILT.\nPLEASE TRY AGAIN LATER\n")
+        nerd_quiz()
+    elif choice == '4':
+        print("\nPLEASE TRY AGAIN LATER\n")
     elif choice == 'e':
         print("\nSorry.\nBut up can never leave.\nYou live here now.\nGoodBye.")
     else:
         print("\nI didn't understand that choice.\n")
-
