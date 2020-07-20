@@ -43,8 +43,8 @@ def shopping_spree():
     if q1 == 'y':
         q1_2 = int(input("How much? "))
     elif q1 == 'n':
-        q1_2 = int(input("How much would you like to borrow? "))
-    print(f"Let's see what you can buy with ${q1_2}\n")
+        q1_2 = int(input('How much would you like to borrow? '))
+        print(f"Lets see what you can buy with $ {q1_2}")
     store_title_bar()
     for i, (k, v) in enumerate(wands.items()):
         print(f"[{i}]  {k} ${v}")
@@ -58,32 +58,37 @@ def shopping_spree():
 
 
 def nerd_quiz():
-    nerd_q1 = "What part of the plant conducts photosynthesis? "
-    nerd_q2 = "Frog is a reptile or amphibian? "
-    nerd_q3 = "Which scientist proposed the three laws of motion? "
-    nerd_q4 = "The standard unit of measurement for energy is ____."
-
-    nerd_a1 = "leaf"
-    nerd_a2 = "amphibian"
-    nerd_a3 = "isaac newton"
-    nerd_a4 = "joule"
-
-    nerd_g1 = input(nerd_q1).lower()
-    nerd_g2 = input(nerd_q2).lower()
-    nerd_g3 = input(nerd_q3).lower()
-    nerd_g4 = input(nerd_q4).lower()
-
+    # questions dict.items()
+    nerd_questions = {"What part of the plant conducts photosynthesis? ": "leaf",
+                      "Frog is a reptile or amphibian? ": "amphibian",
+                      "Which scientist proposed the three laws of motion? ": "isaac newton",
+                      "The standard unit of measurement for energy is ____. ": "joule"}
+    # guesses
+    nerd_guesses = []
     score = 0
-    if nerd_g1 == nerd_a1:
-        score += 1
-    if nerd_g2 == nerd_a2:
-        score += 1
-    if nerd_g3 == nerd_a3:
-        score += 1
-    if nerd_g4 == nerd_a4:
-        score += 1
+    for x in nerd_questions.keys():
+        nerd_guess = input(x)
+        nerd_guesses.append(nerd_guess.lower())
+
+    for x, y in nerd_questions.items():
+        for i in nerd_guesses:
+            if i == y:
+                score += 1
+            nerd_guesses.pop(0)
+            break;
 
     print(f'You answered {score} answers correct')
+    # Open the coffee.txt file in append mode.
+    quiz_file = open('quiz.txt', 'a')
+    save_results = input('Would you like to save your results? ')
+
+    if save_results == 'y':
+        # Append the data to the file.
+        quiz_file.write('You scored ' + str(score) + ' points\n')
+        # Close the file.
+    quiz_file.close()
+    print('Data appended to coffee.txt.')
+
 
 
 def get_user_choice():
