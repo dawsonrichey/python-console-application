@@ -1,13 +1,9 @@
 import os
-
-
-# creating a dictionaly of items to sell in the shop
+# creating a dictionary of items to sell in the shop
 # The 1 will skip 0 when listing the item number
 wands = {'Oak': 23, 'Pine': 99, 'Maple': 837}
+
 # FUNCTIONS
-# This file is a terminal application that goes on and on my friends
-
-
 def display_title_bar():
     # Clears the terminal screen, and displays a title bar.
     os.system('clear')
@@ -18,16 +14,16 @@ def display_title_bar():
     print("***       A journey into a wondrous land of imagination.     ***")
     print("****************************************************************")
 
+
 def store_title_bar():
     # Clears the terminal screen, and displays a title bar.
     os.system('clear')
+    print("****************************************************************")
+    print("***                   Oleanders Wand Shop                    ***")
+    print("****************************************************************")
 
-    print("****************************************************************")
-    print("***                 Olivander's Wand Shop                    ***")
-    print("****************************************************************")
 
 def riddle_game():
-
     answer = 5
     riddle = "How many woods can a woodchuck chuck? "
     riddle_guess = int(input(riddle))
