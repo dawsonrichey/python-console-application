@@ -15,6 +15,19 @@ def display_title_bar():
     print("****************************************************************")
 
 
+def riddle_game():
+
+    answer = 5
+    riddle = "How many woods can a woodchuck chuck? "
+    riddle_guess = int(input(riddle))
+
+    while riddle_guess != answer:
+        bad_guess = "Guess Again "
+        riddle_guess = int(input(bad_guess))
+
+    print("Impressive! You guessed right.")
+
+
 def get_user_choice():
     # Let users know what they can do.
     print("\n[1] Answer my riddle")
@@ -24,9 +37,10 @@ def get_user_choice():
 
     return input("What would you like to do? ")
 
-
 # MAIN PROGRAM
 # Set up a loop where users can choose what they'd like to do.
+
+
 choice = ''
 display_title_bar()
 while choice != 'e':
@@ -35,7 +49,7 @@ while choice != 'e':
 
     # Respond to the user's choice.
     if choice == '1':
-        print("\nINSERT RIDDLE WITH ANSWER VALIDATION\n")
+        riddle_game()
     elif choice == '2':
         print("\nSORRY BUT YOU HAVE NO MONEY\n")
     elif choice == '3':

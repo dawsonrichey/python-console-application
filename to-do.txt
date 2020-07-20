@@ -1,4 +1,8 @@
 -------
  TO DO
 -------
-[ ]
+[ ] Build a T or F riddle game
+[ ] Build a game using the turtle library
+[ ] Build a shopping app that will allow purchases
+[ ] Build a user background story and status profile for the user inside of the project
+
