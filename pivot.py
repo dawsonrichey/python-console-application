@@ -1,4 +1,15 @@
 import os
+# importing datetime module for now()
+from datetime import datetime
+from datetime import date
+now = datetime.now()
+today = date.today()
+current_time = now.strftime("%H:%M:%S")
+# Month abbreviation, day and year
+current_date = today.strftime("%b-%d-%Y")
+full_datetime = print("Time and Date =", current_time, current_date)
+
+
 
 # creating a dictionary of items to sell in the shop
 # The 1 will skip 0 when listing the item number
@@ -84,7 +95,7 @@ def nerd_quiz():
 
     if save_results == 'y':
         # Append the data to the file.
-        quiz_file.write('You scored ' + str(score) + ' points\n')
+        quiz_file.write(user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date)  + '\n')
         # Close the file.
     quiz_file.close()
     print('Data appended to coffee.txt.')
