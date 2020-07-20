@@ -1,5 +1,9 @@
 import os
 
+
+# creating a dictionaly of items to sell in the shop
+# The 1 will skip 0 when listing the item number
+wands = {'Oak': 23, 'Pine': 99, 'Maple': 837}
 # FUNCTIONS
 # This file is a terminal application that goes on and on my friends
 
@@ -14,6 +18,13 @@ def display_title_bar():
     print("***       A journey into a wondrous land of imagination.     ***")
     print("****************************************************************")
 
+def store_title_bar():
+    # Clears the terminal screen, and displays a title bar.
+    os.system('clear')
+
+    print("****************************************************************")
+    print("***                 Olivander's Wand Shop                    ***")
+    print("****************************************************************")
 
 def riddle_game():
 
@@ -27,6 +38,23 @@ def riddle_game():
 
     print("Impressive! You guessed right.")
 
+
+def shopping_spree():
+    print('I hope you love to shop...because you have no other options!')
+    q1 = input("Do you have any money? ")
+    if q1 == 'y':
+        q1_2 = int(input("How much? "))
+    elif q1 == 'n':
+        q1_2 = int(input("How much would you like to borrow? "))
+    print(f"Let's see what you can buy with ${q1_2}\n")
+    store_title_bar()
+    for i, (k, v) in enumerate(wands.items()):
+        print(f"[{i}]  {k} ${v}")
+    owner_q1 = input('Would you like to buy something? ')
+    if owner_q1 == 'y':
+        print('no')
+    elif owner_q1 == 'n':
+        print('no')
 
 def get_user_choice():
     # Let users know what they can do.
@@ -51,7 +79,7 @@ while choice != 'e':
     if choice == '1':
         riddle_game()
     elif choice == '2':
-        print("\nSORRY BUT YOU HAVE NO MONEY\n")
+        shopping_spree()
     elif choice == '3':
         print("\nSORRY BUT THE GAME HAS NOT YET BEEN BUILT.\nPLEASE TRY AGAIN LATER\n")
     elif choice == 'e':
