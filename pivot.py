@@ -2,10 +2,11 @@ import os
 # importing datetime module for now()
 from datetime import datetime, date
 
-now = datetime.now()
-today = date.today()
+time = datetime.time()
+date = date.date()
+# Time abbreviation, hour min, and second
 current_time = now.strftime("%H:%M:%S")
-# Month abbreviation, day and year
+# Date abbreviation, day and year
 current_date = today.strftime("%b-%d-%Y")
 
 full_datetime = print("Time and Date =", current_time, current_date)
@@ -72,7 +73,7 @@ def nerd_quiz():
     nerd_questions = {"What part of the plant conducts photosynthesis? ": "leaf",
                       "Frog is a reptile or amphibian? ": "amphibian",
                       "Which scientist proposed the three laws of motion? ": "isaac newton",
-                      "The standard unit of measurement for energy is ____. ": "joule"}
+                       "The standard unit of measurement for energy is ____. ": "joule"}
     # guesses
     nerd_guesses = []
     score = 0
