@@ -15,25 +15,26 @@ print("Enter 'y' for yes or 'n' for no")
 print("Enter 'q' at any time to quit.")
 
 # register_voters = input("\nWould you like to register to vote? ")
+def register_voters():
+    while True:
+        # register_voters = input("\nWould you like to register to vote? ")
+        # if register_voters == 'q':
+        #     break
+        first = input("\nPlease give me a first name: ")
+        if first == 'q':
+            break
+        last = input("Please give me a last name: ")
+        if last == 'q':
+            break
 
-while True:
-    register_voters = input("\nWould you like to register to vote? ")
-    if register_voters == 'q':
-        break
-    first = input("\nPlease give me a first name: ")
-    if first == 'q':
-        break
-    last = input("Please give me a last name: ")
-    if last == 'q':
-        break
+        formatted_name = get_formatted_name(first, last)
+        print(f"\tNeatly formatted name: {formatted_name}.")
 
-    formatted_name = get_formatted_name(first, last)
-    print(f"\tNeatly formatted name: {formatted_name}.")
-
-    registered_voters = open('registered_voters.txt', 'a')
-    registered_voters.write(formatted_name + '\n')
-    registered_voters.close()
-    print('Data appended to registered_voters.txt.')
+        registered_voters = open('registered_voters.txt', 'a')
+        registered_voters.write(formatted_name + '\n')
+        registered_voters.close()
+        print(f'Congratulations {formatted_name}, you have been registered to vote')
+        break
 
 
 def all_registered_voters():

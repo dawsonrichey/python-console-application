@@ -1,6 +1,8 @@
 import os
 # importing datetime module for now()
 from datetime import datetime, date
+from names import register_voters, all_registered_voters
+
 
 now = datetime.now()
 today = date.today()
@@ -119,7 +121,9 @@ def get_user_choice():
     print("\n[1] Answer My Riddle")
     print("[2] Go Shopping")
     print("[3] Take a quiz")
-    print("[4] List All Quiz Participants")
+    print("[4] Display All Quiz Results")
+    print("[5] Register to vote")
+    print("[6] Display All Registerd Voters")
     # print("[5] User Quest Tracker")
     print("[e] Exit\n")
 
@@ -149,7 +153,9 @@ while choice != 'e':
     elif choice == '4':
         quiz_results()
     elif choice == '5':
-        print("\nPLEASE TRY AGAIN LATER\n")
+        register_voters()
+    elif choice == '6':
+        all_registered_voters()
     elif choice == 'e':
         print("\nSorry.\nBut up can never leave.\nYou live here now.\nGoodBye.")
     else:

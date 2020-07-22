@@ -2,7 +2,9 @@
     -This is a Twilight Zone Themed console application. Beware those who dare enter
 
 # Instructions
-
+    - You will need an IDE to run this project, I recommend PyCharm
+    - You will also need to have python version 3.7 installed on your local enviornment
+    - Despite many missleading file names you will want to run pivot.py to run the console application
 
 # Project Requirements
     Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
