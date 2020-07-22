@@ -1,3 +1,5 @@
+# this file allows you to store the current/most recent users information
+
 import json
 
 def get_stored_username():
@@ -27,5 +29,13 @@ def greet_user():
     else:
         username = get_new_username()
         print(f"We'll remember you when you come back, {username}!")
+
+
+current_user = input('Please enter your username: ')
+
+
+get_stored_username()
+# print(username)
+get_new_username()
 
 greet_user()

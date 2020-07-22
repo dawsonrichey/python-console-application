@@ -2,8 +2,8 @@ import os
 # importing datetime module for now()
 from datetime import datetime, date
 
-time = datetime.time()
-date = date.date()
+now = datetime.now()
+today = date.today()
 # Time abbreviation, hour min, and second
 current_time = now.strftime("%H:%M:%S")
 # Date abbreviation, day and year
@@ -89,7 +89,7 @@ def nerd_quiz():
             break;
 
     print(f'You answered {score} answers correct')
-    # Open the coffee.txt file in append mode.
+    # Open the quiz.txt file in append mode.
     quiz_file = open('quiz.txt', 'a')
     save_results = input('Would you like to save your results? ')
 
@@ -98,7 +98,7 @@ def nerd_quiz():
         quiz_file.write(user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date)  + '\n')
         # Close the file.
     quiz_file.close()
-    print('Data appended to coffee.txt.')
+    print('Data appended to quiz.txt.')
 
 def quiz_results():
     # Open a file named philosophers.txt.

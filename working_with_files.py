@@ -132,10 +132,10 @@ def get_user_choice():
 
 # MAIN PROGRAM
 # Set up a loop where users can choose what they'd like to do.
-# class User:
-#     def __init__(self, name, password):
-#         self.name = name
-#         self.password = password
+class User:
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
 
 
 f = open("demofile3.txt", "w")

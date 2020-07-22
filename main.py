@@ -3,8 +3,9 @@
 
 import os
 from datetime import datetime, date
-from user import User
+import os
 
+import scraper
 
 now = datetime.now()
 today = date.today()
@@ -62,3 +63,4 @@ def asking_questions():
 
 
 asking_questions()
+

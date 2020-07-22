@@ -19,3 +19,6 @@ class User:
         self.last_name = input(f'Password: {last_name}')
         self.username = input(f'Username: {username}')
         self.password = input(f'Password: {password}')
+
+    # get_full_name()
+    # new_user()

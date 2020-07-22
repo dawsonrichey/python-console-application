@@ -1,5 +1,15 @@
 from name_function import get_formatted_name
 
+from datetime import datetime, date
+
+now = datetime.now()
+today = date.today()
+# Time abbreviation, hour min, and second
+current_time = now.strftime("%H:%M:%S")
+# Date abbreviation, day and year
+current_date = today.strftime("%b-%d-%Y")
+
+full_datetime = print("Time and Date =", current_time, current_date)
 
 print("Enter 'y' for yes or 'n' for no")
 print("Enter 'q' at any time to quit.")
@@ -8,6 +18,8 @@ print("Enter 'q' at any time to quit.")
 
 while True:
     register_voters = input("\nWould you like to register to vote? ")
+    if register_voters == 'q':
+        break
     first = input("\nPlease give me a first name: ")
     if first == 'q':
         break
@@ -15,7 +27,6 @@ while True:
     if last == 'q':
         break
 
-        
     formatted_name = get_formatted_name(first, last)
     print(f"\tNeatly formatted name: {formatted_name}.")
 
@@ -23,16 +34,6 @@ while True:
     registered_voters.write(formatted_name + '\n')
     registered_voters.close()
     print('Data appended to registered_voters.txt.')
-    # registered_voters= open('registered_voters.txt', 'a')
-    # save_results = input('Would you like to save your results? ')
-
-    # if save_results == 'y':
-        # Append the data to the file.
-        # quiz_file.write(
-        #     user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date) + '\n')
-        # Close the file.
-    # registered_voters.close()
-    # print('Data appended to quiz.txt.')
 
 
 def all_registered_voters():
