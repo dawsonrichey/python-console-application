@@ -1,8 +1,15 @@
 -------
  TO DO
 -------
-[ ] Build a T or F riddle game
-[ ] Build a game using the turtle library
-[ ] Build a shopping app that will allow purchases
+[ ] Remove all previous files - I'm building a new app
+[ ] Create program welcome message
+[ ] Create a menu option with number based interactions to choose from
 [ ] Build a user background story and status profile for the user inside of the project
-
+[ ] Record date and time
+[ ] Create file to store ALL users in
+[ ] Create a log file to record error or failed interactions
+[ ] Create User Class
+[ ] Create user objects in a function
+[ ] Add comments to my code
+[ ] Record failed attempts triggering warning and hint messages
+[ ] Create a visual graph/representation

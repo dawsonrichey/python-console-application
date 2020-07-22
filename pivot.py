@@ -36,8 +36,8 @@ def store_title_bar():
 
 def riddle_game():
     answer = "teeth"
-    riddle = "Thirty white horses on a red hill, First they champ, Then they stamp, Then they stand still."
-    riddle_guess = int(input(riddle))
+    riddle = "Thirty white horses on a red hill, First they champ, Then they stamp, Then they stand still. Which is? "
+    riddle_guess = input(riddle)
 
     while riddle_guess != answer:
         bad_guess = "Guess Again "
@@ -57,7 +57,7 @@ def shopping_spree():
         print(f"Lets see what you can buy with $ {q1_2}")
     store_title_bar()
     for i, (k, v) in enumerate(wands.items()):
-        print(f"[{i}]  {k} ${v}")
+        print(f"[{i+1}]  {k} ${v}")
     owner_q1 = input('Would you like to buy something? ')
     if owner_q1 == 'y':
         purchase_number = int(input('Please Enter the Number of the item you would like to buy at this time? '))
