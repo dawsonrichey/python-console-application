@@ -2,7 +2,7 @@ import os
 # importing datetime module for now()
 from datetime import datetime, date
 from names import register_voters, all_registered_voters
-
+from user import User
 
 now = datetime.now()
 today = date.today()
