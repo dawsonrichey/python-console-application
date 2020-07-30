@@ -2,16 +2,18 @@ import os
 # importing datetime module for now()
 from datetime import datetime, date
 from names import register_voters, all_registered_voters
+# from pip._vendor.urllib3.util import current_time
 from user import User
 
-now = datetime.now()
-today = date.today()
-# Time abbreviation, hour min, and second
-current_time = now.strftime("%H:%M:%S")
-# Date abbreviation, day and year
-current_date = today.strftime("%b-%d-%Y")
+def calc_time():
+    now = datetime.now()
+    today = date.today()
+    # Time abbreviation, hour min, and second
+    current_time = now.strftime("%H:%M:%S")
+    # Date abbreviation, day and year
+    current_date = today.strftime("%b-%d-%Y")
 
-full_datetime = print("Time and Date =", current_time, current_date)
+    full_datetime = print("Time and Date =", current_time, current_date)
 
 # creating a dictionary of items to sell in the shop
 # The 1 will skip 0 when listing the item number
@@ -75,7 +77,7 @@ def nerd_quiz():
     nerd_questions = {"What part of the plant conducts photosynthesis? ": "leaf",
                       "Frog is a reptile or amphibian? ": "amphibian",
                       "Which scientist proposed the three laws of motion? ": "isaac newton",
-                       "The standard unit of measurement for energy is ____. ": "joule"}
+                      "The standard unit of measurement for energy is ____. ": "joule"}
     # guesses
     nerd_guesses = []
     score = 0
@@ -97,13 +99,14 @@ def nerd_quiz():
 
     if save_results == 'y':
         # Append the data to the file.
+        calc_time()
         quiz_file.write(user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date)  + '\n')
         # Close the file.
     quiz_file.close()
     print('Data appended to quiz.txt.')
 
 def quiz_results():
-    # Open a file named philosophers.txt.
+    # Open a file named quiz.txt.
     infile = open('quiz.txt', 'r')
 
     # Read the file's contents.
@@ -116,7 +119,24 @@ def quiz_results():
     # memory.
     full_quiz_content = print(file_contents)
 
+
+def user_log():
+    # Open a file named user_log.txt.
+    infile = open('user_log.txt', 'r')
+
+    # Read the file's contents.
+    file_user_contents = infile.read()
+
+    # Close the file.
+    infile.close()
+
+    # Print the data that was read into
+    # memory.
+    full_user_content = print(file_user_contents)
+
+
 def get_user_choice():
+
     # Let users know what they can do.
     print("\n[1] Answer My Riddle")
     print("[2] Go Shopping")
@@ -160,3 +180,17 @@ while choice != 'e':
         print("\nSorry.\nBut up can never leave.\nYou live here now.\nGoodBye.")
     else:
         print("\nI didn't understand that choice.\n")
+
+
+    # calc_time()
+
+    now = datetime.now()
+    today = date.today()
+    # Time abbreviation, hour min, and second
+    current_time = now.strftime("%H:%M:%S")
+    # Date abbreviation, day and year
+    current_date = today.strftime("%b-%d-%Y")
+    # infile = open('user_log.txt', 'r')
+    infile = open('user_log.txt', 'a')
+    infile.write(user + ': selected ' + choice + ' ' + str(current_time) + '\n')
+    infile.close()

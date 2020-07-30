@@ -1,0 +1,19 @@
+daw: selected  19:55:15 Jul-29-2020
+daw: selected  19:55:15 Jul-29-2020
+Tim: selected  19:56:34 Jul-29-2020
+Tim: selected  19:56:34 Jul-29-2020
+Dustin: selected 5 19:59:50 Jul-29-2020
+Dustin: selected 6 19:59:50 Jul-29-2020
+Dustin: selected e 19:59:50 Jul-29-2020
+Sauson: selected 6 20:02:22 Jul-29-2020
+Sauson: selected 5 20:02:33 Jul-29-2020
+Sauson: selected 6 20:02:36 Jul-29-2020
+Sauson: selected e 20:02:43 Jul-29-2020
+Casey: selected 6 <built-in function monotonic>
+Casey: selected 5 <built-in function monotonic>
+Casey: selected 6 <built-in function monotonic>
+Casey: selected e <built-in function monotonic>
+carley: selected 6 20:13:46
+carley: selected 5 20:13:53
+carley: selected 6 20:13:55
+carley: selected e 20:13:56
