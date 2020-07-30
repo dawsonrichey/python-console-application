@@ -3,15 +3,15 @@ from datetime import datetime, date
 from names import register_voters, all_registered_voters
 from user import User
 
-def calc_time():
-    now = datetime.now()
-    today = date.today()
-    # Time abbreviation, hour min, and second
-    current_time = now.strftime("%H:%M:%S")
-    # Date abbreviation, day and year
-    current_date = today.strftime("%b-%d-%Y")
-
-    full_datetime = print("Time and Date =", current_time, current_date)
+# def calc_time():
+#     now = datetime.now()
+#     today = date.today()
+#     # Time abbreviation, hour min, and second
+#     current_time = now.strftime("%H:%M:%S")
+#     # Date abbreviation, day and year
+#     current_date = today.strftime("%b-%d-%Y")
+#
+#     full_datetime = print("Time and Date =", current_time, current_date)
 
 
 # creating a dictionary of items to sell in the shop
@@ -98,7 +98,7 @@ def nerd_quiz():
 
     if save_results == 'y':
         # Append the data to the file.
-        calc_time()
+        # calc_time()
         quiz_file.write(user + ': scored ' + str(score) + ' points : ' + str(current_time) + ' ' + str(current_date)  + '\n')
         # Close the file.
     quiz_file.close()
@@ -107,30 +107,22 @@ def nerd_quiz():
 def quiz_results():
     # Open a file named quiz.txt.
     infile = open('quiz.txt', 'r')
-
     # Read the file's contents.
     file_contents = infile.read()
-
     # Close the file.
     infile.close()
-
-    # Print the data that was read into
-    # memory.
+    # Print the data that was read into memory
     full_quiz_content = print(file_contents)
 
 
 def user_log():
     # Open a file named user_log.txt.
     infile = open('user_log.txt', 'r')
-
     # Read the file's contents.
     file_user_contents = infile.read()
-
     # Close the file.
     infile.close()
-
-    # Print the data that was read into
-    # memory.
+    # Print the data that was read into memory.
     full_user_content = print(file_user_contents)
 
 
