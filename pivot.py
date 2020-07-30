@@ -1,8 +1,6 @@
 import os
-# importing datetime module for now()
 from datetime import datetime, date
 from names import register_voters, all_registered_voters
-# from pip._vendor.urllib3.util import current_time
 from user import User
 
 def calc_time():
@@ -15,6 +13,7 @@ def calc_time():
 
     full_datetime = print("Time and Date =", current_time, current_date)
 
+
 # creating a dictionary of items to sell in the shop
 # The 1 will skip 0 when listing the item number
 wands = {'Oak': 23, 'Pine': 99, 'Maple': 837}
@@ -22,7 +21,7 @@ wands = {'Oak': 23, 'Pine': 99, 'Maple': 837}
 
 # FUNCTIONS
 def program_title_bar():
-    # Clears the terminal screen, and displays a title bar.
+    # Clears the terminal screen, and displays a console app title bar.
     os.system('clear')
     print("****************************************************************")
     print("***      You are about to enter another dimension.           ***")
@@ -136,7 +135,7 @@ def user_log():
 
 
 def get_user_choice():
-
+    # This is the main menu
     # Let users know what they can do.
     print("\n[1] Answer My Riddle")
     print("[2] Go Shopping")
@@ -182,8 +181,7 @@ while choice != 'e':
         print("\nI didn't understand that choice.\n")
 
 
-    # calc_time()
-
+    # This will log users name, selections, and time of section to the user_log.txt file
     now = datetime.now()
     today = date.today()
     # Time abbreviation, hour min, and second
